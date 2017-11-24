@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="jsprun-mysql" uuid="8512395e-a8b1-470c-b08b-9cb726cbeac9">
+    <database-info product="MySQL" version="5.7.17-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="jsprun"/>
+    <table name="jrun_access" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="allowview" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpost" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowreply" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowgetattach" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpostattach" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="uid,fid"/>
+    </table>
+    <table name="jrun_activities" schema="" catalog="jsprun" type="TABLE">
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="cost" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="starttimefrom" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="starttimeto" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="place" sqlType="CHAR" precision="40" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="class" sqlType="CHAR" precision="25" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="gender" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="number" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="tid"/>
+      <index name="uid" unique="false" columns="uid,starttimefrom"/>
+    </table>
+    <table name="jrun_activityapplies" schema="" catalog="jsprun" type="TABLE">
+      <column name="applyid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="username" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="message" sqlType="CHAR" precision="200" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="verified" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="payment" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="contact" sqlType="CHAR" precision="200" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="applyid"/>
+      <index name="dateline" unique="false" columns="tid,dateline"/>
+      <index name="tid" unique="false" columns="tid"/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_adminactions" schema="" catalog="jsprun" type="TABLE">
+      <column name="admingid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="disabledactions" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="admingid"/>
+    </table>
+    <table name="jrun_admingroups" schema="" catalog="jsprun" type="TABLE">
+      <column name="admingid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="alloweditpost" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="alloweditpoll" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowstickthread" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowmodpost" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowdelpost" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowmassprune" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowrefund" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowcensorword" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowviewip" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowbanip" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowedituser" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowmoduser" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowbanuser" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpostannounce" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowviewlog" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowbanpost" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="disablepostctrl" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="admingid"/>
+    </table>
+    <table name="jrun_adminnotes" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="admin" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="access" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="adminid" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="message" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="jrun_adminsessions" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="ip" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="errorcount" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_advertisements" schema="" catalog="jsprun" type="TABLE">
+      <column name="advid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="type" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="JzAn"/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="title" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="targets" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="parameters" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="code" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="starttime" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="endtime" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="advid"/>
+      <index name="available" unique="false" columns="available,displayorder"/>
+    </table>
+    <table name="jrun_announcements" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="author" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="subject" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="type" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="starttime" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="endtime" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="message" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="groups" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="timespan" unique="false" columns="starttime,endtime"/>
+    </table>
+    <table name="jrun_attachments" schema="" catalog="jsprun" type="TABLE">
+      <column name="aid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="pid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="readperm" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="price" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="filename" sqlType="CHAR" precision="100" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="description" sqlType="CHAR" precision="100" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="filetype" sqlType="CHAR" precision="50" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="filesize" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="attachment" sqlType="CHAR" precision="100" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="downloads" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="isimage" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="thumb" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="remote" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="aid"/>
+      <index name="pid" unique="false" columns="pid,aid"/>
+      <index name="tid" unique="false" columns="tid"/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_attachpaymentlog" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="aid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="authorid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="amount" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="netamount" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="aid,uid"/>
+      <index name="authorid" unique="false" columns="authorid"/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_attachtypes" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="extension" sqlType="CHAR" precision="12" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="maxsize" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="jrun_banned" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="ip1" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="ip2" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="ip3" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="ip4" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="admin" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="jrun_bbcodes" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="tag" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="icon" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="replacement" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="example" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="explanation" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="params" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="prompt" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="nest" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="jrun_buddys" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="buddyid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="description" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_caches" schema="" catalog="jsprun" type="TABLE">
+      <column name="cachename" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="data" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="cachename"/>
+      <index name="expiration" unique="false" columns="type,expiration"/>
+    </table>
+    <table name="jrun_creditslog" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="fromto" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="sendcredits" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="receivecredits" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="send" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="receive" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="operation" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <index name="uid" unique="false" columns="uid,dateline"/>
+    </table>
+    <table name="jrun_crons" schema="" catalog="jsprun" type="TABLE">
+      <column name="cronid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="type" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1" def="J3VzZXIn"/>
+      <column name="name" sqlType="CHAR" precision="50" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="filename" sqlType="CHAR" precision="50" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="lastrun" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nextrun" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="weekday" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="day" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="hour" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="minute" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="cronid"/>
+      <index name="nextrun" unique="false" columns="available,nextrun"/>
+    </table>
+    <table name="jrun_debateposts" schema="" catalog="jsprun" type="TABLE">
+      <column name="pid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="stand" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="voters" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="voterids" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="pid"/>
+      <index name="pid" unique="false" columns="pid,stand"/>
+      <index name="tid" unique="false" columns="tid,uid"/>
+    </table>
+    <table name="jrun_debates" schema="" catalog="jsprun" type="TABLE">
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="starttime" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="endtime" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="affirmdebaters" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="negadebaters" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="affirmvotes" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="negavotes" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="umpire" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="winner" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="bestdebater" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="affirmpoint" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="negapoint" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="umpirepoint" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="affirmvoterids" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="negavoterids" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="affirmreplies" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="negareplies" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="tid"/>
+      <index name="uid" unique="false" columns="uid,starttime"/>
+    </table>
+    <table name="jrun_failedlogins" schema="" catalog="jsprun" type="TABLE">
+      <column name="ip" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="count" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="lastupdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="ip"/>
+    </table>
+    <table name="jrun_faqs" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="fpid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="identifier" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="keyword" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="message" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="fpid" unique="false" columns="fpid,displayorder"/>
+    </table>
+    <table name="jrun_favorites" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_forumfields" schema="" catalog="jsprun" type="TABLE">
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="password" sqlType="VARCHAR" precision="12" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="icon" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="postcredits" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="replycredits" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="getattachcredits" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="postattachcredits" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="digestcredits" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="redirect" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="attachextensions" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="formulaperm" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="moderators" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="rules" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="threadtypes" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="viewperm" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="postperm" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="replyperm" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="getattachperm" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="postattachperm" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="keywords" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="modrecommend" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="tradetypes" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="typemodels" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="fid"/>
+    </table>
+    <table name="jrun_forumlinks" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="url" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="logo" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="jrun_forumrecommend" schema="" catalog="jsprun" type="TABLE">
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="subject" sqlType="CHAR" precision="80" scale="0" nullable="false" jdbcType="1"/>
+      <column name="author" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="authorid" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4"/>
+      <column name="moderatorid" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4"/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="tid"/>
+      <index name="displayorder" unique="false" columns="fid,displayorder"/>
+    </table>
+    <table name="jrun_forums" schema="" catalog="jsprun" type="TABLE">
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="fup" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="type" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1" def="J2ZvcnVtJw=="/>
+      <column name="name" sqlType="CHAR" precision="50" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="styleid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="threads" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="posts" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="todayposts" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastpost" sqlType="CHAR" precision="110" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="allowsmilies" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowhtml" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowbbcode" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowimgcode" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowmediacode" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowanonymous" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowshare" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpostspecial" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="allowspecialonly" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="alloweditrules" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="recyclebin" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="modnewposts" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="jammer" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="disablewatermark" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="inheritedmod" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="autoclose" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="forumcolumns" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="threadcaches" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpaytoauthor" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="alloweditpost" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="simple" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="fid"/>
+      <index name="forum" unique="false" columns="status,type,displayorder"/>
+      <index name="fup" unique="false" columns="fup"/>
+    </table>
+    <table name="jrun_imagetypes" schema="" catalog="jsprun" type="TABLE">
+      <column name="typeid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="name" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="type" sqlType="ENUM" precision="7" scale="0" nullable="false" jdbcType="1" def="J3NtaWxleSc="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="directory" sqlType="CHAR" precision="100" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="typeid"/>
+    </table>
+    <table name="jrun_invites" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="inviteip" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="invitecode" sqlType="CHAR" precision="16" scale="0" nullable="false" jdbcType="1"/>
+      <column name="reguid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="regdateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <index name="invitecode" unique="false" columns="invitecode"/>
+      <index name="uid" unique="false" columns="uid,status"/>
+    </table>
+    <table name="jrun_itempool" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="question" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="answer" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="jrun_magiclog" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="magicid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="action" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="amount" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="price" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="targettid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="targetpid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="targetuid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <index name="targetuid" unique="false" columns="targetuid,dateline"/>
+      <index name="uid" unique="false" columns="uid,dateline"/>
+    </table>
+    <table name="jrun_magicmarket" schema="" catalog="jsprun" type="TABLE">
+      <column name="mid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="magicid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="username" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="price" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="num" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <primary-key name="PRIMARY" columns="mid"/>
+      <index name="num" unique="false" columns="magicid,num"/>
+      <index name="price" unique="false" columns="magicid,price"/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_magics" schema="" catalog="jsprun" type="TABLE">
+      <column name="magicid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="type" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="identifier" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="price" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="num" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="salevolume" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="supplytype" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="supplynum" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="weight" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="filename" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="magicperm" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="magicid"/>
+      <index name="identifier" unique="true" columns="identifier"/>
+      <index name="displayorder" unique="false" columns="available,displayorder"/>
+    </table>
+    <table name="jrun_medals" schema="" catalog="jsprun" type="TABLE">
+      <column name="medalid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="image" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="medalid"/>
+    </table>
+    <table name="jrun_memberfields" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nickname" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="site" sqlType="VARCHAR" precision="75" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="alipay" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="icq" sqlType="VARCHAR" precision="12" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="qq" sqlType="VARCHAR" precision="12" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="yahoo" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="msn" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="taobao" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="location" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="customstatus" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="medals" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="avatar" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="avatarwidth" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="avatarheight" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="bio" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="sightml" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="ignorepm" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="groupterms" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="authstr" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="spacename" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="buyercredit" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="sellercredit" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <primary-key name="PRIMARY" columns="uid"/>
+    </table>
+    <table name="jrun_membermagics" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="magicid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="num" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_members" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="password" sqlType="CHAR" precision="32" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="secques" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="gender" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="adminid" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="groupid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="groupexpiry" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="extgroupids" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="regip" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="regdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastip" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="lastvisit" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastactivity" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastpost" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="posts" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="digestposts" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="oltime" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="pageviews" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="credits" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="extcredits1" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="extcredits2" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="extcredits3" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="extcredits4" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="extcredits5" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="extcredits6" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="extcredits7" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="extcredits8" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="email" sqlType="CHAR" precision="40" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="bday" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="JzAwMDAtMDAtMDAn"/>
+      <column name="sigstatus" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="tpp" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="ppp" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="styleid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="dateformat" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="timeformat" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="pmsound" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="showemail" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="newsletter" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="invisible" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="timeoffset" sqlType="CHAR" precision="4" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="newpm" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="accessmasks" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="editormode" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="Mg=="/>
+      <column name="customshow" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MjY="/>
+      <column name="salt" sqlType="CHAR" precision="6" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="uid"/>
+      <index name="username" unique="true" columns="username"/>
+      <index name="email" unique="false" columns="email"/>
+      <index name="groupid" unique="false" columns="groupid"/>
+    </table>
+    <table name="jrun_memberspaces" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="style" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="description" sqlType="CHAR" precision="100" scale="0" nullable="false" jdbcType="1"/>
+      <column name="layout" sqlType="CHAR" precision="200" scale="0" nullable="false" jdbcType="1"/>
+      <column name="side" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="uid"/>
+    </table>
+    <table name="jrun_moderators" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="inherited" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="uid,fid"/>
+    </table>
+    <table name="jrun_modworks" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="modaction" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="dateline" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="JzIwMDYtMDEtMDEn"/>
+      <column name="count" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="posts" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <index name="uid" unique="false" columns="uid,dateline"/>
+    </table>
+    <table name="jrun_myposts" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="pid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="position" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="special" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="uid,tid"/>
+      <index name="tid" unique="false" columns="tid,dateline"/>
+    </table>
+    <table name="jrun_mythreads" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="special" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="dateline" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="uid,tid"/>
+      <index name="tid" unique="false" columns="tid,dateline"/>
+    </table>
+    <table name="jrun_onlinelist" schema="" catalog="jsprun" type="TABLE">
+      <column name="groupid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="title" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="url" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+    </table>
+    <table name="jrun_onlinetime" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="thismonth" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="total" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastupdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="uid"/>
+    </table>
+    <table name="jrun_orders" schema="" catalog="jsprun" type="TABLE">
+      <column name="orderid" sqlType="CHAR" precision="32" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="status" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="buyer" sqlType="CHAR" precision="50" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="admin" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="amount" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="price" sqlType="FLOAT UNSIGNED" precision="7" scale="2" nullable="false" jdbcType="7" def="MC4wMA=="/>
+      <column name="submitdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="confirmdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <index name="orderid" unique="true" columns="orderid"/>
+      <index name="submitdate" unique="false" columns="submitdate"/>
+      <index name="uid" unique="false" columns="uid,submitdate"/>
+    </table>
+    <table name="jrun_paymentlog" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="authorid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="amount" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="netamount" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="tid,uid"/>
+      <index name="authorid" unique="false" columns="authorid"/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_pluginhooks" schema="" catalog="jsprun" type="TABLE">
+      <column name="pluginhookid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pluginid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="code" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="pluginhookid"/>
+      <index name="available" unique="false" columns="available"/>
+      <index name="pluginid" unique="false" columns="pluginid"/>
+    </table>
+    <table name="jrun_plugins" schema="" catalog="jsprun" type="TABLE">
+      <column name="pluginid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="adminid" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="name" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="identifier" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="datatables" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="directory" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="copyright" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="modules" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="pluginid"/>
+      <index name="identifier" unique="true" columns="identifier"/>
+    </table>
+    <table name="jrun_pluginvars" schema="" catalog="jsprun" type="TABLE">
+      <column name="pluginvarid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pluginid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="variable" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="type" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="J3RleHQn"/>
+      <column name="value" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="extra" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="pluginvarid"/>
+      <index name="pluginid" unique="false" columns="pluginid"/>
+    </table>
+    <table name="jrun_pms" schema="" catalog="jsprun" type="TABLE">
+      <column name="pmid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="msgfrom" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="msgfromid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="msgtoid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="folder" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1" def="J2luYm94Jw=="/>
+      <column name="new" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="subject" sqlType="VARCHAR" precision="75" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="message" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="delstatus" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="pmid"/>
+      <index name="msgfromid" unique="false" columns="msgfromid,folder,dateline"/>
+      <index name="msgtoid" unique="false" columns="msgtoid,folder,dateline"/>
+    </table>
+    <table name="jrun_pmsearchindex" schema="" catalog="jsprun" type="TABLE">
+      <column name="searchid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="keywords" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="searchstring" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="pms" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="pmids" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="searchid"/>
+      <index name="uid" unique="false" columns="uid,dateline"/>
+    </table>
+    <table name="jrun_polloptions" schema="" catalog="jsprun" type="TABLE">
+      <column name="polloptionid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="votes" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="polloption" sqlType="VARCHAR" precision="80" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="voterids" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="polloptionid"/>
+      <index name="tid" unique="false" columns="tid,displayorder"/>
+    </table>
+    <table name="jrun_polls" schema="" catalog="jsprun" type="TABLE">
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="multiple" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="visible" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="maxchoices" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="tid"/>
+    </table>
+    <table name="jrun_posts" schema="" catalog="jsprun" type="TABLE">
+      <column name="pid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="first" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="author" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="authorid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="subject" sqlType="VARCHAR" precision="80" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="message" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="useip" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="invisible" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="anonymous" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usesig" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="htmlon" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="bbcodeoff" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="smileyoff" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="parseurloff" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="attachment" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="rate" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="ratetimes" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="pid"/>
+      <index name="authorid" unique="false" columns="authorid"/>
+      <index name="dateline" unique="false" columns="dateline"/>
+      <index name="displayorder" unique="false" columns="tid,invisible,dateline"/>
+      <index name="fid" unique="false" columns="fid"/>
+      <index name="first" unique="false" columns="tid,first"/>
+      <index name="invisible" unique="false" columns="invisible"/>
+    </table>
+    <table name="jrun_profilefields" schema="" catalog="jsprun" type="TABLE">
+      <column name="fieldid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="invisible" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="title" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="size" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="displayorder" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="required" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="unchangeable" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="showinthread" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="selective" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="choices" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="fieldid"/>
+      <index name="available" unique="false" columns="available,required,displayorder"/>
+    </table>
+    <table name="jrun_projects" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="value" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="type" unique="false" columns="type"/>
+    </table>
+    <table name="jrun_promotions" schema="" catalog="jsprun" type="TABLE">
+      <column name="ip" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="username" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="ip"/>
+    </table>
+    <table name="jrun_ranks" schema="" catalog="jsprun" type="TABLE">
+      <column name="rankid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="ranktitle" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="postshigher" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="stars" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="color" sqlType="VARCHAR" precision="7" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="rankid"/>
+    </table>
+    <table name="jrun_ratelog" schema="" catalog="jsprun" type="TABLE">
+      <column name="pid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="username" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="extcredits" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="score" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="reason" sqlType="CHAR" precision="40" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <index name="dateline" unique="false" columns="dateline"/>
+      <index name="pid" unique="false" columns="pid,dateline"/>
+    </table>
+    <table name="jrun_regips" schema="" catalog="jsprun" type="TABLE">
+      <column name="ip" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="count" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <index name="ip" unique="false" columns="ip"/>
+    </table>
+    <table name="jrun_relatedthreads" schema="" catalog="jsprun" type="TABLE">
+      <column name="tid" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="type" sqlType="ENUM" precision="8" scale="0" nullable="false" jdbcType="1" def="J2dlbmVyYWwn"/>
+      <column name="expiration" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="keywords" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="relatedthreads" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="tid,type"/>
+    </table>
+    <table name="jrun_rewardlog" schema="" catalog="jsprun" type="TABLE">
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="authorid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="answererid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="netamount" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <index name="userid" unique="false" columns="authorid,answererid"/>
+    </table>
+    <table name="jrun_rsscaches" schema="" catalog="jsprun" type="TABLE">
+      <column name="lastupdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="forum" sqlType="CHAR" precision="50" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="author" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="subject" sqlType="CHAR" precision="80" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="description" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <index name="tid" unique="true" columns="tid"/>
+      <index name="fid" unique="false" columns="fid,dateline"/>
+    </table>
+    <table name="jrun_searchindex" schema="" catalog="jsprun" type="TABLE">
+      <column name="searchid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="keywords" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="searchstring" sqlType="CHAR" precision="32" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="useip" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="threadtypeid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="threads" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="tids" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="searchid"/>
+      <index name="searchstring" unique="false" columns="searchstring"/>
+      <index name="uid" unique="false" columns="uid,dateline"/>
+    </table>
+    <table name="jrun_sessions" schema="" catalog="jsprun" type="TABLE">
+      <column name="sid" sqlType="CHAR" precision="6" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="ip1" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="ip2" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="ip3" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="ip4" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="username" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="groupid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="styleid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="invisible" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="action" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="lastactivity" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastolupdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="pageviews" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="seccode" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <index name="sid" unique="true" columns="sid"/>
+      <index name="invisible" unique="false" columns="invisible"/>
+      <index name="uid" unique="false" columns="uid"/>
+    </table>
+    <table name="jrun_settings" schema="" catalog="jsprun" type="TABLE">
+      <column name="variable" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="value" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="variable"/>
+    </table>
+    <table name="jrun_smilies" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="typeid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="type" sqlType="ENUM" precision="7" scale="0" nullable="false" jdbcType="1" def="J3NtaWxleSc="/>
+      <column name="code" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="url" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="jrun_spacecaches" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="variable" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="value" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="uid,variable"/>
+    </table>
+    <table name="jrun_stats" schema="" catalog="jsprun" type="TABLE">
+      <column name="type" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="variable" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="count" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="type,variable"/>
+    </table>
+    <table name="jrun_statvars" schema="" catalog="jsprun" type="TABLE">
+      <column name="type" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="variable" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="value" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="type,variable"/>
+    </table>
+    <table name="jrun_styles" schema="" catalog="jsprun" type="TABLE">
+      <column name="styleid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="templateid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <primary-key name="PRIMARY" columns="styleid"/>
+      <index name="available" unique="false" columns="available"/>
+    </table>
+    <table name="jrun_stylevars" schema="" catalog="jsprun" type="TABLE">
+      <column name="stylevarid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="styleid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="variable" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="substitute" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="stylevarid"/>
+      <index name="styleid" unique="false" columns="styleid"/>
+    </table>
+    <table name="jrun_subscriptions" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastpost" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastnotify" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="tid,uid"/>
+    </table>
+    <table name="jrun_tags" schema="" catalog="jsprun" type="TABLE">
+      <column name="tagname" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="closed" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="total" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="tagname"/>
+      <index name="closed" unique="false" columns="closed"/>
+      <index name="total" unique="false" columns="total"/>
+    </table>
+    <table name="jrun_templates" schema="" catalog="jsprun" type="TABLE">
+      <column name="templateid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="directory" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="copyright" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="templateid"/>
+    </table>
+    <table name="jrun_threads" schema="" catalog="jsprun" type="TABLE">
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="iconid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="typeid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="readperm" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="price" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="author" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="authorid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="subject" sqlType="CHAR" precision="80" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastpost" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastposter" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="views" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="replies" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="highlight" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="digest" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="rate" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="blog" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="special" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="attachment" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="subscribed" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="moderated" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="closed" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="tid"/>
+      <index name="blog" unique="false" columns="blog,authorid,dateline"/>
+      <index name="digest" unique="false" columns="digest"/>
+      <index name="displayorder" unique="false" columns="fid,displayorder,lastpost"/>
+      <index name="typeid" unique="false" columns="fid,typeid,displayorder,lastpost"/>
+    </table>
+    <table name="jrun_threadsmod" schema="" catalog="jsprun" type="TABLE">
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="username" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="action" sqlType="CHAR" precision="5" scale="0" nullable="false" jdbcType="1"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="magicid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="remark" sqlType="CHAR" precision="15" scale="0" nullable="true" jdbcType="1"/>
+      <index name="action" unique="false" columns="action"/>
+      <index name="expiration" unique="false" columns="expiration,status"/>
+      <index name="tid" unique="false" columns="tid,dateline"/>
+    </table>
+    <table name="jrun_threadtags" schema="" catalog="jsprun" type="TABLE">
+      <column name="tagname" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="tid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <index name="tagname" unique="false" columns="tagname"/>
+      <index name="tid" unique="false" columns="tid"/>
+    </table>
+    <table name="jrun_threadtypes" schema="" catalog="jsprun" type="TABLE">
+      <column name="typeid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="special" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="modelid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="expiration" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="template" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="typeid"/>
+    </table>
+    <table name="jrun_tradecomments" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="orderid" sqlType="CHAR" precision="32" scale="0" nullable="false" jdbcType="1"/>
+      <column name="pid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="type" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="raterid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="rater" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="rateeid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ratee" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="message" sqlType="CHAR" precision="200" scale="0" nullable="false" jdbcType="1"/>
+      <column name="explanation" sqlType="CHAR" precision="200" scale="0" nullable="false" jdbcType="1"/>
+      <column name="score" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="orderid" unique="false" columns="orderid"/>
+      <index name="rateeid" unique="false" columns="rateeid,type,dateline"/>
+      <index name="raterid" unique="false" columns="raterid,type,dateline"/>
+    </table>
+    <table name="jrun_tradelog" schema="" catalog="jsprun" type="TABLE">
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="orderid" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="tradeno" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="price" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <column name="quality" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="itemtype" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="number" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="tax" sqlType="DECIMAL UNSIGNED" precision="6" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
+      <column name="locus" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sellerid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="seller" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12"/>
+      <column name="selleraccount" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="buyerid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="buyer" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12"/>
+      <column name="buyercontact" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="buyercredits" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="buyermsg" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="lastupdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="offline" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="buyername" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="buyerzip" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="buyerphone" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="buyermobile" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="transport" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="transportfee" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="baseprice" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <column name="discount" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="ratestatus" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="message" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <index name="orderid" unique="true" columns="orderid"/>
+      <index name="buyerid" unique="false" columns="buyerid"/>
+      <index name="buyerlog" unique="false" columns="buyerid,status,lastupdate"/>
+      <index name="pid" unique="false" columns="pid"/>
+      <index name="sellerid" unique="false" columns="sellerid"/>
+      <index name="sellerlog" unique="false" columns="sellerid,status,lastupdate"/>
+      <index name="status" unique="false" columns="status"/>
+      <index name="tid" unique="false" columns="tid,pid"/>
+    </table>
+    <table name="jrun_tradeoptionvars" schema="" catalog="jsprun" type="TABLE">
+      <column name="typeid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="pid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="optionid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="value" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <index name="pid" unique="false" columns="pid"/>
+      <index name="typeid" unique="false" columns="typeid"/>
+    </table>
+    <table name="jrun_trades" schema="" catalog="jsprun" type="TABLE">
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="typeid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="sellerid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="seller" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="account" sqlType="CHAR" precision="50" scale="0" nullable="false" jdbcType="1"/>
+      <column name="subject" sqlType="CHAR" precision="100" scale="0" nullable="false" jdbcType="1"/>
+      <column name="price" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <column name="amount" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MQ=="/>
+      <column name="quality" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="locus" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="transport" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="ordinaryfee" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="expressfee" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="emsfee" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="itemtype" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lastbuyer" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="lastupdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="totalitems" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="tradesum" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
+      <column name="closed" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="aid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="costprice" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <primary-key name="PRIMARY" columns="tid,pid"/>
+      <index name="displayorder" unique="false" columns="tid,displayorder"/>
+      <index name="sellerid" unique="false" columns="sellerid"/>
+      <index name="sellertrades" unique="false" columns="sellerid,tradesum,totalitems"/>
+      <index name="totalitems" unique="false" columns="totalitems"/>
+      <index name="tradesum" unique="false" columns="tradesum"/>
+      <index name="typeid" unique="false" columns="typeid"/>
+    </table>
+    <table name="jrun_typemodels" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="type" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="options" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="customoptions" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="jrun_typeoptions" schema="" catalog="jsprun" type="TABLE">
+      <column name="optionid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="classid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="identifier" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="type" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="rules" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="optionid"/>
+      <index name="classid" unique="false" columns="classid"/>
+    </table>
+    <table name="jrun_typeoptionvars" schema="" catalog="jsprun" type="TABLE">
+      <column name="typeid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="optionid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="expiration" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="value" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
+      <index name="tid" unique="false" columns="tid"/>
+      <index name="typeid" unique="false" columns="typeid"/>
+    </table>
+    <table name="jrun_typevars" schema="" catalog="jsprun" type="TABLE">
+      <column name="typeid" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="optionid" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="available" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="required" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="unchangeable" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="search" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="displayorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <index name="optionid" unique="true" columns="typeid,optionid"/>
+      <index name="typeid" unique="false" columns="typeid"/>
+    </table>
+    <table name="jrun_usergroups" schema="" catalog="jsprun" type="TABLE">
+      <column name="groupid" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="radminid" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="type" sqlType="ENUM" precision="7" scale="0" nullable="false" jdbcType="1" def="J21lbWJlcic="/>
+      <column name="system" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1" def="J3ByaXZhdGUn"/>
+      <column name="grouptitle" sqlType="CHAR" precision="30" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="creditshigher" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="creditslower" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="stars" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="color" sqlType="CHAR" precision="7" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="groupavatar" sqlType="CHAR" precision="60" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="readaccess" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowvisit" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpost" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowreply" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpostpoll" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpostreward" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowposttrade" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpostactivity" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpostvideo" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowdirectpost" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowgetattach" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowpostattach" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowvote" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowmultigroups" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowsearch" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowavatar" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowcstatus" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowuseblog" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowinvisible" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowtransfer" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowsetreadperm" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowsetattachperm" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowhidecode" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowhtml" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowcusbbcode" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowanonymous" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allownickname" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowsigbbcode" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowsigimgcode" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowviewpro" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowviewstats" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="disableperiodctrl" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="reasonpm" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="maxprice" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="maxpmnum" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="maxsigsize" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="maxattachsize" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="maxsizeperday" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="maxpostsperhour" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="attachextensions" sqlType="CHAR" precision="100" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="raterange" sqlType="CHAR" precision="150" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="mintradeprice" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MQ=="/>
+      <column name="maxtradeprice" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="minrewardprice" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MQ=="/>
+      <column name="maxrewardprice" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="magicsdiscount" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="allowmagics" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="maxmagicsweight" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="allowbiobbcode" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowbioimgcode" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="maxbiosize" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="allowinvite" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="allowmailinvite" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="maxinvitenum" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="inviteprice" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="maxinviteday" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="allowpostdebate" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="tradestick" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="allowviewdigest" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="groupid"/>
+      <index name="creditsrange" unique="false" columns="creditslower,creditshigher"/>
+    </table>
+    <table name="jrun_validating" schema="" catalog="jsprun" type="TABLE">
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="submitdate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="moddate" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="admin" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="submittimes" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="message" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="remark" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="uid"/>
+      <index name="status" unique="false" columns="status"/>
+    </table>
+    <table name="jrun_videos" schema="" catalog="jsprun" type="TABLE">
+      <column name="vid" sqlType="VARCHAR" precision="16" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="uid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dateline" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="pid" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="vtype" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="vview" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="vtime" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="visup" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="vthumb" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="vtitle" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="vclass" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="vautoplay" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="vid"/>
+      <index name="uid" unique="true" columns="vid,uid"/>
+      <index name="dateline" unique="false" columns="dateline"/>
+    </table>
+    <table name="jrun_videotags" schema="" catalog="jsprun" type="TABLE">
+      <column name="tagname" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="vid" sqlType="CHAR" precision="14" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="tid" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <index name="tagname" unique="true" columns="tagname,vid"/>
+      <index name="tid" unique="false" columns="tid"/>
+    </table>
+    <table name="jrun_words" schema="" catalog="jsprun" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="admin" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="find" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="replacement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>
